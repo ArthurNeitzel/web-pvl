@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="db/changelog/00000000000001_criando_tabela_ator.xml" relativeToChangelogFile="false"/>
+    <include file="db/changelog/00000000000002_criando_tabela_classe.xml" relativeToChangelogFile="false"/>
+    <include file="db/changelog/00000000000003_criando_tabela_diretor.xml" relativeToChangelogFile="false"/>
+    <include file="db/changelog/00000000000004_criando_tabela_categoria.xml" relativeToChangelogFile="false"/>
+    <include file="db/changelog/00000000000005_criando_tabela_titulo.xml" relativeToChangelogFile="false"/>
+    <include file="db/changelog/00000000000006_criando_tabela_item.xml" relativeToChangelogFile="false"/>
+    <include file="db/changelog/00000000000007_criando_tabela_cliente.xml" relativeToChangelogFile="false"/>
+    <include file="db/changelog/00000000000008_criando_tabela_locacao.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>
