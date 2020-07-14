@@ -5,10 +5,9 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum TipoItemEnum {
-    DVD(1),
-    FITA(0),
-    BLURAY(0);
+public enum TipoClienteEnum {
+    SOCIO(1),
+    DEPENDENTE(0);
 
     private final Integer codigo;
 }

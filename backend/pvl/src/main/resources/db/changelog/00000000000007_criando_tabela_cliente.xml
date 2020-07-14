@@ -19,15 +19,18 @@
                 <constraints nullable="false"/>
             </column>
             <column name="CPF" type="VARCHAR(11)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="ENDERECO" type="VARCHAR(200)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="TELEFONE" type="VARCHAR(12)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="SEXO" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TIPO_CLIENTE" type="INTEGER">
                 <constraints nullable="false"/>
             </column>
             <column name="ID_RESPONSAVEL" type="BIGINT">

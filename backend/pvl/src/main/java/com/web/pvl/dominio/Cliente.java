@@ -29,4 +29,6 @@ public class Cliente {
     @Column(name = "SEXO", nullable = false)
     private Integer sexo;
 
+    @Column(name = "TIPO_CLIENTE", nullable = false)
+    private Integer tipoCLiente;
 }
