@@ -1,0 +1,35 @@
+<app-alert></app-alert>
+<p-confirmDialog></p-confirmDialog>
+<app-loading></app-loading>
+<button (click)="openDialog(true,null)" class="btn-margin" label="Novo" pButton></button>
+
+
+<div class="p-grid">
+    <div class="p-col-11">
+        <p-table #dt [(selection)]="atorSelecionado" [value]="atores"
+         selectionMode="single">
+            <ng-template pTemplate="header">
+                <tr>
+                <th scope="col" style="width: 150px;">Código</th>
+                <th scope="col">Nome</th>
+                </tr>
+            </ng-template>
+            <ng-template let-ator pTemplate="body">
+                <tr [pSelectableRow]="ator">
+                  <td class="table-row">{{ator["id"]}}</td>
+                  <td class="table-row descricao">{{ator["nome"] }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="p-col-1" id="botoes">
+        <button (click)="confirmarExclusao(atorSelecionado.id)" [disabled]="!isOneSelected()" class="ui-button-rounded"
+                icon="pi pi-trash"
+                id="botao1" pButton type="button" pTooltip="Excluir" tooltipPosition="right"></button>
+        <button (click)="openDialog(true,atorSelecionado.id)" [disabled]="true" class="ui-button-rounded"
+                icon="pi pi-pencil"
+                id="botao2" pButton type="button" pTooltip="Editar" tooltipPosition="right"></button>
+    </div>
+</div>
+
+<app-ator #DialogCadastrar (alterar)="atualizarPagina()"></app-ator>
