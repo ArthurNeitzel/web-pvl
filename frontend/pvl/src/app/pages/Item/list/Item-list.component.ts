@@ -1,28 +1,28 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Table, ConfirmationService } from 'primeng';
-import { Classe } from '../models/classe';
+import { Item } from '../models/Item';
 import { AlertService } from 'src/app/components/alert/alert.service';
-import { ClasseService } from '../service/classe.service';
+import { ItemService } from '../service/Item.service';
 import { LoadingService } from 'src/app/components/loading/loading.service';
-import { ClasseFormComponent } from '../classe-form/classe-form.component';
+import { ItemComponent } from '../form/Item.component';
 
 @Component({
   selector: 'app-classe-list',
-  templateUrl: './classe-list.component.html',
-  styleUrls: ['./classe-list.component.css']
+  templateUrl: './Item-list.component.html',
+  styleUrls: ['./Item-list.component.css']
 })
 export class ClasseListComponent implements OnInit {
 
-  @ViewChild('DialogCadastrar') dialogClasse: ClasseFormComponent;
+  @ViewChild('DialogCadastrar') dialogItem: ItemComponent;
 
   @ViewChild('dt') table: Table;
 
-  classes: Classe;
-  classeSecionado: Classe;
+  itens: Item;
+  ItemSecionado: Item;
   
   constructor(
     private alertService: AlertService,
-    public classeService: ClasseService,
+    public itemService: ItemService,
     public confirmation: ConfirmationService,
     public loadingService: LoadingService,
   ) { }
@@ -31,41 +31,41 @@ export class ClasseListComponent implements OnInit {
   ngOnInit() {
   }
   
-  listarClassees() {
-    this.classeService.index().subscribe(
+  listarItens() {
+    this.itemService.index().subscribe(
       (response) => {
-        this.classes = response;
+        this.itens = response;
         this.loadingService.deactivate();
       },
       () => {
         this.loadingService.deactivate();
-        this.alertService.montarAlerta('error', 'Erro', 'Erro ao listar as Classes');
+        this.alertService.montarAlerta('error', 'Erro', 'Erro ao listar as Itens');
       }
     );
   }
 
   excluir(id: number): void {
     this.loadingService.activate();
-    this.classeService
+    this.itemService
       .destroy(id)
       .subscribe(
         () => {
           this.loadingService.deactivate();
-          this.alertService.montarAlerta('success', 'Sucesso', 'Classe excluida com sucesso');
-          this.listarClassees();
+          this.alertService.montarAlerta('success', 'Sucesso', 'Item excluido com sucesso');
+          this.listarItens();
         },
         () => {
           this.loadingService.deactivate();
-          this.alertService.montarAlerta('error', 'Erro', 'Erro ao excluir Classe');
+          this.alertService.montarAlerta('error', 'Erro', 'Erro ao excluir Item');
         }
       );
-    this.classeSecionado = null;
+    this.ItemSecionado = null;
   }
 
   confirmarExclusao(id: number) {
     this.confirmation.confirm({
       message: 'Deseja realmente excluir?',
-      header: 'Excluir Classe',
+      header: 'Excluir Item',
       icon: 'pi pi-question-circle',
       acceptLabel: 'Sim',
       rejectLabel: 'Não',

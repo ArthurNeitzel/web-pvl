@@ -1,10 +1,10 @@
 <p-dialog [(visible)]="exibir" [modal]="true" [style]="{ width: '60vw' }" header="{{ header }}">
-  <form [formGroup]="formAtor">
+  <form [formGroup]="formFilme">
     <span class="ui-float-label">
       <input
         pInputText
-        [(ngModel)]="ator.nome"
-        formControlName="nome"
+        [(ngModel)]="filme.Titulo"
+        formControlName="Titulo"
       />
       <label for="float-input"> Nome </label>
     </span>

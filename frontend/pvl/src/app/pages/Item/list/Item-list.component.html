@@ -1,0 +1,41 @@
+<app-alert></app-alert>
+<p-confirmDialog></p-confirmDialog>
+<app-loading></app-loading>
+<button (click)="openDialog(true,null)" class="btn-margin" label="Novo" pButton></button>
+
+
+<div class="p-grid">
+    <div class="p-col-11">
+        <p-table #dt [(selection)]="itemSelecionado" [value]="itens"
+         selectionMode="single">
+            <ng-template pTemplate="header">
+                <tr>
+                <th scope="col" style="width: 150px;">ID</th>
+                <th scope="col">Numero de Serie</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">dataAquisicao</th>
+                <th scope="col">tipo</th>
+                </tr>
+            </ng-template>
+            <ng-template let-classe pTemplate="body">
+                <tr [pSelectableRow]="item">
+                  <td class="table-row">{{item["id"]}}</td>
+                  <td class="table-row ">{{item["Numero de Serie"]}}</td>
+                  <td class="table-row">R$ {{item["Titulo"]}}</td>
+                  <td class="table-row">{{item["dataAquisicao"]}} dias</td>
+                  <td class="table-row">{{item["tipo"]}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="p-col-1" id="botoes">
+        <button (click)="confirmarExclusao(itemSelecionado.id)" [disabled]="!isOneSelected()" class="ui-button-rounded"
+                icon="pi pi-trash"
+                id="botao1" pButton type="button" pTooltip="Excluir" tooltipPosition="right"></button>
+        <button (click)="openDialog(true,itemSelecionado.id)" [disabled]="true" class="ui-button-rounded"
+                icon="pi pi-pencil"
+                id="botao2" pButton type="button" pTooltip="Editar" tooltipPosition="right"></button>
+    </div>
+</div>
+
+<app-classe #DialogCadastrar (alterar)="atualizarPagina()"></app-classe>

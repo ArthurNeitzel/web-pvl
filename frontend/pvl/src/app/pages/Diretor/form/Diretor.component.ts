@@ -6,9 +6,9 @@ import { AlertService } from 'src/app/components/alert/alert.service';
 import { LoadingService } from 'src/app/components/loading/loading.service';
 
 @Component({
-  selector: 'app-ator',
-  templateUrl: './ator.component.html',
-  styleUrls: ['./ator.component.css']
+  selector: 'app-Diretor',
+  templateUrl: './Diretor.component.html',
+  styleUrls: ['./Diretor.component.css']
 })
 export class DiretorComponent implements OnInit {
 

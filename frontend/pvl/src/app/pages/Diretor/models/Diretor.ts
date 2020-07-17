@@ -1,6 +1,6 @@
 import {Resource} from 'src/app/models/resource.model';
 
-export class Ator extends Resource {
+export class Diretor extends Resource {
     id: number;
     nome: string;
 }

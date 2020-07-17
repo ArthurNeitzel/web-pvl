@@ -1,32 +1,40 @@
 <p-dialog [(visible)]="exibir" [modal]="true" [style]="{ width: '60vw' }" header="{{ header }}">
   <form [formGroup]="formClasse">
+
     <span class="ui-float-label">
       <input
         pInputText
-        [(ngModel)]="classe.nome"
-        formControlName="nome"
+        [(ngModel)]="item.numSerie"
+        formControlName="numSerie"
       />
-      <label for="float-input"> Nome </label>
+      <label for="float-input"> Numero de Serie </label>
     </span>
+
+
     <span class="ui-float-label">
       <input
         pInputText
-        [(ngModel)]="classe.valor"
-        formControlName="valor"
+        [(ngModel)]="item.titulo"
+        formControlName="titulo"
       />
-      <label for="float-input"> Valor </label>
+      <label for="float-input"> Titulo </label>
     </span>
-    <span class="ui-float-label">
-      <input
-        pInputText
-        [(ngModel)]="classe.prazo"
-        formControlName="prazo"
-      />
-      <label for="float-input"> Data de Devolução </label>
+    
+    
+      <label for="float-input"> Data de Aquisicao </label>
     </span>
     <button (click)="salvar()"
           class="ui-button-raised button-spacing" label="Salvar" pButton type="button"></button>
     <button (click)="cancelar()" class="ui-button-raised button-spacing" label="Cancelar" pButton
           type="button"></button>
+
+          <span class="ui-float-label">
+            <input
+              pInputText
+              [(ngModel)]="item.tipo"
+              formControlName="tipo"
+            />
+            <label for="float-input"> Tipo </label>
+          </span>
   </form>
 </p-dialog>

@@ -13,7 +13,7 @@
                 <th scope="col" style="width: 150px;">Código</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Valor</th>
-                <th scope="col">Prazo</th>
+                <th scope="col">Data de Devolução</th>
                 </tr>
             </ng-template>
             <ng-template let-classe pTemplate="body">
@@ -21,7 +21,7 @@
                   <td class="table-row">{{classe["id"]}}</td>
                   <td class="table-row descricao">{{classe["nome"]}}</td>
                   <td class="table-row">R$ {{classe["valor"]}}</td>
-                  <td class="table-row">{{classe["prazo"]}} dias</td>
+                  <td class="table-row">{{classe["dataDevolução"]}} dias</td>
                 </tr>
             </ng-template>
         </p-table>

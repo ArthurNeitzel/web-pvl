@@ -4,5 +4,5 @@ export class Classe extends Resource {
     id: number;
     nome: string;
     valor: number;
-    prazo: number;
+    dataDevolucao: number;
 }
